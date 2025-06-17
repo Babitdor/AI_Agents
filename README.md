@@ -1,4 +1,4 @@
-# AI_Agents
+# AI-Agents
 
 # Personal Knowledge Assistant
 This project is a Personal Knowledge Assistant that allows you to interact with your own PDF documents using natural language questions. The assistant parses, chunks, embeds, indexes, and retrieves relevant information from your uploaded PDFs, then generates precise and informative answers using an LLM.
