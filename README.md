@@ -26,45 +26,72 @@ MCPs/
 
 ## Getting Started
 
-1. Setup a Python environment using 
-```bash
-    python -m venv venv
-```
+1. **Start Ollama with a model** (In a separate terminal)
 
-2. Install Dependencies
-Make sure you have Python 3.10+ installed.
+   ```bash
+   ollama run mistral
+   ```
+2. **Setup Python Environment**
 
-Install required packages:
-```bash
-    pip install -r requirement.txt
-```
+   ```bash
+   python -m venv venv
+   ```
+2. **Install dependencies**
 
-2. Run the Assistant
-Start the Streamlit app:
-```bash
-    streamlit run app.py
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-3. Usage
-Upload a PDF file.
-Enter your question about the PDF.
-Get an answer generated from the document's content.
+3. **Run the Streamlit app**
 
-4. Requirements
-Ollama running locally with the mistral:latest model pulled.
-Python packages as listed in requirement.txt.
+   ```bash
+   streamlit run app.py
+   ```
 
-5. Code Overview
-    
-   -UI: app.py
+4. **In the app**:
 
-   -Streamlit interface for file upload and Q&A.
+   * Upload a PDF file.
+   * Enter your question.
+   * Get an answer generated based on the document's content.
 
-   -RAG Pipeline: retriever.py
-      Contains the RagState and all graph nodes for parsing, chunking, embedding, indexing, retrieval, and answer generation.
+---
 
-   -Tools: tools.py
-      Functions for PDF text extraction and answer generation using Ollama or any other LLM you configure.
+## 📦 Requirements
 
-Note:
-You must have Ollama running and the mistral:latest model available locally for answer generation to work.
+* [Ollama](https://ollama.com) installed and running locally.
+
+  * Model: `mistral:latest` pulled (`ollama pull mistral`)
+* Python 3.9+
+* Required packages listed in `requirements.txt`:
+
+  * `streamlit`, `langgraph`, `sentence-transformers`, `faiss-cpu`, `pymupdf`, `requests`, etc.
+
+---
+
+## 🧩 Code Overview
+
+* `app.py`
+  🖼️ Streamlit interface for uploading PDFs and asking questions.
+
+* `retriever.py`
+  ⚙️ RAG pipeline with LangGraph: defines `RagState` and all nodes for:
+
+  * Parsing
+  * Chunking
+  * Embedding
+  * Indexing
+  * Retrieval
+  * Answer generation
+
+* `tools.py`
+  🧠 Utility functions:
+
+  * PDF text extraction with PyMuPDF
+  * Answer generation via local Ollama HTTP API (e.g., `mistral`, `llama3`, `phi3`)
+
+---
+
+## ⚠️ Note
+
+* Ollama **must be running** locally with the `mistral:latest` model for the app to function.
+* You can swap in other supported models by modifying `tools.py`.
