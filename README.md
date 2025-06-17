@@ -55,14 +55,16 @@ Ollama running locally with the mistral:latest model pulled.
 Python packages as listed in requirement.txt.
 
 5. Code Overview
-UI: app.py
-Streamlit interface for file upload and Q&A.
+    
+   -UI: app.py
 
-RAG Pipeline: retriever.py
-Contains the RagState and all graph nodes for parsing, chunking, embedding, indexing, retrieval, and answer generation.
+   -Streamlit interface for file upload and Q&A.
 
-Tools: tools.py
-Functions for PDF text extraction and answer generation using Ollama or any other LLM you configure.
+   -RAG Pipeline: retriever.py
+      Contains the RagState and all graph nodes for parsing, chunking, embedding, indexing, retrieval, and answer generation.
+
+   -Tools: tools.py
+      Functions for PDF text extraction and answer generation using Ollama or any other LLM you configure.
 
 Note:
 You must have Ollama running and the mistral:latest model available locally for answer generation to work.
