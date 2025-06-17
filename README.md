@@ -22,3 +22,29 @@ Agents/
 MCPs/
   TemplateMCP.py         # Example MCP agent (Weather Service)
 ```
+
+## Getting Started
+
+1. Setup a Python environment using 
+```bash
+    python -m venv venv
+```
+
+2. Install Dependencies
+Make sure you have Python 3.10+ installed.
+
+Install required packages:
+```bash
+    pip install -r requirement.txt
+```
+
+2. Run the Assistant
+Start the Streamlit app:
+```bash
+    streamlit run app.py
+```
+
+3. Usage
+Upload a PDF file.
+Enter your question about the PDF.
+Get an answer generated from the document's content.
