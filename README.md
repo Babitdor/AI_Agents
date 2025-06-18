@@ -1,95 +1,33 @@
-# Personal Knowledge Assistant
-This project is a Personal Knowledge Assistant that allows you to interact with your own PDF documents using natural language questions. The assistant parses, chunks, embeds, indexes, and retrieves relevant information from your uploaded PDFs, then generates precise and informative answers using an LLM.
+# AI Agents
+
+A repo of intelligent AI Agents leveraging **LangGraph**, **LlamaIndex**, **LangChain**, and **Ollama**-based models, designed with transferability in mind to support other Large Language Models (LLMs).
+
+---
+
+## Overview
+
+This repository provides tools and components to build powerful AI Agents that can reason, plan, and execute complex tasks by orchestrating multiple AI components and knowledge sources. It integrates cutting-edge frameworks and libraries for language model interaction and knowledge retrieval:
+
+- **LangGraph**: Define and manage complex agent workflows and decision graphs.
+- **LlamaIndex**: Efficiently index and retrieve information from documents to augment agent knowledge.
+- **LangChain**: Chain together prompts, LLM calls, and external tools in a modular way.
+- **Ollama models**: Use local or hosted LLMs via Ollama, with seamless transferability to other LLM providers.
+
+---
 
 ## Features
-Upload a PDF and ask questions about its contents.
-Automatic text extraction, chunking, and embedding.
-Fast similarity search using FAISS.
-Answer generation using Ollama with the mistral:latest model by default.
-Flexible LLM support: You can easily swap in other LLMs (e.g., OpenAI, local models, etc.) by modifying the generate_answer function in tools.py.
-Modular, node-based RAG pipeline with LangGraph.
 
-## Project Structure
+- **Modular Agent Design**: Compose agents using nodes in LangGraph workflows.
+- **Hybrid Knowledge Retrieval**: Leverage LlamaIndex for document indexing and retrieval.
+- **Flexible LLM Integration**: Use Ollama-hosted models or swap in other LLMs (OpenAI, HuggingFace, etc.) with minimal changes.
+- **Multi-tool Support**: Connect to APIs, databases, and custom logic from agent workflows.
+- **Extensible**: Easily add new tools, models, and workflows.
+
+---
+
+## Installation
 
 ```bash
-Agents/
-  PersonalKnowledgeAssistant/
-    app.py               # Streamlit UI for PDF Q&A
-    retriever.py         # RAG pipeline logic (nodes, state, retrieval)
-    tools.py             # Utility functions (PDF parsing, LLM answer)
-    requirement.txt      # Python dependencies
-MCPs/
-  TemplateMCP.py         # Example MCP agent (Weather Service)
-```
-
-## Getting Started
-
-1. **Start Ollama with a model** (In a separate terminal)
-
-   ```bash
-   ollama run mistral
-   ```
-2. **Setup Python Environment**
-
-   ```bash
-   python -m venv venv
-   ```
-2. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Streamlit app**
-
-   ```bash
-   streamlit run app.py
-   ```
-
-4. **In the app**:
-
-   * Upload a PDF file.
-   * Enter your question.
-   * Get an answer generated based on the document's content.
-
----
-
-## 📦 Requirements
-
-* [Ollama](https://ollama.com) installed and running locally.
-
-  * Model: `mistral:latest` pulled (`ollama pull mistral`)
-* Python 3.9+
-* Required packages listed in `requirements.txt`:
-
-  * `streamlit`, `langgraph`, `sentence-transformers`, `faiss-cpu`, `pymupdf`, `requests`, etc.
-
----
-
-## 🧩 Code Overview
-
-* `app.py`
-  🖼️ Streamlit interface for uploading PDFs and asking questions.
-
-* `retriever.py`
-  ⚙️ RAG pipeline with LangGraph: defines `RagState` and all nodes for:
-
-  * Parsing
-  * Chunking
-  * Embedding
-  * Indexing
-  * Retrieval
-  * Answer generation
-
-* `tools.py`
-  🧠 Utility functions:
-
-  * PDF text extraction with PyMuPDF
-  * Answer generation via local Ollama HTTP API (e.g., `mistral`, `llama3`, `phi3`)
-
----
-
-## ⚠️ Note
-
-* Ollama **must be running** locally with the `mistral:latest` model for the app to function.
-* You can swap in other supported models by modifying `tools.py`.
+git clone https://github.com/Babitdor/AI_Agents.git
+cd AI_Agents
+pip install -r requirements.txt
