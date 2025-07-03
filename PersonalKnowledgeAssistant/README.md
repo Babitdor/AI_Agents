@@ -18,8 +18,6 @@ Agents/
     retriever.py         # RAG pipeline logic (nodes, state, retrieval)
     tools.py             # Utility functions (PDF parsing, LLM answer)
     requirement.txt      # Python dependencies
-MCPs/
-  TemplateMCP.py         # Example MCP agent (Weather Service)
 ```
 
 ## Getting Started
