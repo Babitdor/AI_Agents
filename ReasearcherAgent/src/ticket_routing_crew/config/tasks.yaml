@@ -1,0 +1,68 @@
+analyse_question:
+  description: >
+    Interpret and break down the research question: {ticket}.
+    Your task is to extract the core research intent, identify the most important sub-questions to investigate, and define the best information sources and search strategies for each.
+    This will provide a research roadmap for the downstream research agent to follow.
+
+  expected_output: >
+    Markdown-formatted analysis including:
+    - **Primary Research Intent**: A clear and concise interpretation of the main goal behind the query.
+    - **Key Sub-Questions**: A prioritized list of 3 to 5 focused questions that break down the topic.
+    - **Suggested Search Strategies**: For each sub-question, specify the recommended tools (e.g., ArXiv, GitHub, general web), keywords, time filters, or domain constraints to guide the research agent.
+  agent: research_analysizer
+
+do_research:
+  description: >
+    As a Research Agent, your task is to carry out a structured investigation based on the research breakdown provided in the previous analysis of the question : {ticket}.
+    For each sub-question and its suggested strategy, query the appropriate source (ArXiv, GitHub, or Web).
+    Retrieve and summarize relevant items — academic papers, web resources, and repositories — that best address the research goals.
+    Prioritize high-quality, recent, and relevant results, and present them clearly.
+
+  expected_output: >
+    A dictionary organized by source type:
+    - arxiv: A list of dictionaries, each with:
+        - title: Title of the academic paper
+        - authors: Authors
+        - summary: Key insights or abstract
+        - published_date: Date published
+        - url: Direct link to the paper
+    - web_search: A list of dictionaries, each with:
+        - title: Page or article title
+        - summary: Description of relevance
+        - source: Website or domain
+        - url: Link to the content
+    - github_search: A list of dictionaries, each with:
+        - name: Repository name
+        - description: Summary of its purpose
+        - stars: Number of stars
+        - last_updated: Most recent commit date
+        - url: Link to the repository
+
+  agent: senior_analyst
+  context:
+    - analyse_question
+
+summarise_task:
+  description: >
+    As a Summarization Agent, your task is to condense the provided content (text, articles, reports, or research findings) into clear, concise summaries while retaining key insights.
+    For each input, extract the main points, eliminate redundancy, and present the information in a structured or readable format based on the user's requirements (e.g., bullet points, paragraphs, or executive summaries).
+    Prioritize accuracy, coherence, and relevance to the original context.
+    Ensure that any URLs or links included in the summary are real, verifiable, and present in the source content — do not generate or hallucinate new links.
+  expected_output: >
+    IMPORTANT: A dictionary organized as follows: 
+
+    "summary": "A concise and coherent paragraph capturing the main ideas and key insights of the input content, preserving the original context accurately and without redundancy.",
+    "key_points": [
+      "Bullet point 1: A distilled main idea or fact from the content.",
+      "Bullet point 2: Another significant insight or finding.",
+      "Bullet point 3: Additional relevant detail supporting the summary.",
+      "... (as many as needed to cover essential points)"
+    ]
+    "citations": A list of dictionaries, each with:
+        - title: Page or article title
+        - author: Author of the page or article
+    
+
+  agent: summarizer_agent
+  context:
+    - do_research
