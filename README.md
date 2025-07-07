@@ -20,7 +20,7 @@ This repository provides tools and components to build powerful AI Agents that c
 
 - **Modular Agent Design**: Compose agents using nodes in LangGraph workflows.
 - **Hybrid Knowledge Retrieval**: Leverage LlamaIndex for document indexing and retrieval.
-- **Flexible LLM Integration**: Use Ollama-hosted models or swap in other LLMs (OpenAI, HuggingFace, etc.) with minimal changes.
+- **Flexible LLM Integration**: Use Ollama-hosted models or swap in other LLMs (OpenAI, HuggingFace pipelines, etc.) with minimal changes.
 - **Collaborative Multi-Agent Support**: Orchestrate agents as collaborative teams using CrewAI.
 - **Multi-tool Support**: Connect to APIs, databases, and custom logic from agent workflows.
 - **Extensible**: Easily add new tools, models, and workflows.
