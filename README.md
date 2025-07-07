@@ -1,6 +1,6 @@
 # AI Agents
 
-A repo of intelligent AI Agents leveraging **LangGraph**, **LlamaIndex**, **LangChain**, and **Ollama**-based models, designed with transferability in mind to support other Large Language Models (LLMs).
+A repo of intelligent AI Agents leveraging **LangGraph**, **LlamaIndex**, **LangChain**, **CrewAI**, and **Ollama**-based models, designed with transferability in mind to support other Large Language Models (LLMs).
 
 ---
 
@@ -11,7 +11,8 @@ This repository provides tools and components to build powerful AI Agents that c
 - **LangGraph**: Define and manage complex agent workflows and decision graphs.
 - **LlamaIndex**: Efficiently index and retrieve information from documents to augment agent knowledge.
 - **LangChain**: Chain together prompts, LLM calls, and external tools in a modular way.
-- **Ollama models**: Use local or hosted LLMs via Ollama, with seamless transferability to other LLM providers.
+- **CrewAI**: Coordinate multiple autonomous agents collaboratively to handle complex multi-step tasks.
+- **Ollama models**: Used local or hosted LLMs via Ollama, with seamless transferability to other LLM providers.
 
 ---
 
@@ -20,6 +21,7 @@ This repository provides tools and components to build powerful AI Agents that c
 - **Modular Agent Design**: Compose agents using nodes in LangGraph workflows.
 - **Hybrid Knowledge Retrieval**: Leverage LlamaIndex for document indexing and retrieval.
 - **Flexible LLM Integration**: Use Ollama-hosted models or swap in other LLMs (OpenAI, HuggingFace, etc.) with minimal changes.
+- **Collaborative Multi-Agent Support**: Orchestrate agents as collaborative teams using CrewAI.
 - **Multi-tool Support**: Connect to APIs, databases, and custom logic from agent workflows.
 - **Extensible**: Easily add new tools, models, and workflows.
 
