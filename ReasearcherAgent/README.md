@@ -30,10 +30,10 @@ Add your `OPENAI_API_KEY` to the .env file.
 
 You can customize your crew using the following configuration files:
 
-`src/research_crew/config/agents.yaml`: Define the agents (roles, goals, tools).
-`src/research_crew/config/tasks.yaml`: Define the research tasks each agent performs.
-`src/research_crew/crew.py`: Customize crew logic, add tools, or specify additional arguments.
-`src/research_crew/main.py`: Configure inputs and orchestrate execution.
+- `src/research_crew/config/agents.yaml`: Define the agents (roles, goals, tools).
+- `src/research_crew/config/tasks.yaml`: Define the research tasks each agent performs.
+- `src/research_crew/crew.py`: Customize crew logic, add tools, or specify additional arguments.
+- `src/research_crew/main.py`: Configure inputs and orchestrate execution.
 
 ## Running the Project
 To launch your AI research crew and start task execution, run the following from the root directory:
@@ -49,7 +49,7 @@ By default, the example workflow will create a report.md in the root folder summ
 
 The ResearchCrew is composed of multiple AI agents, each with defined roles, goals, and tools. These agents work together to complete tasks as outlined in:
 
-`config/agents.yaml`: Capabilities, names, and descriptions of each agent.
-`config/tasks.yaml`: The actual sequence of research-oriented tasks.
+- `config/agents.yaml`: Capabilities, names, and descriptions of each agent.
+- `config/tasks.yaml`: The actual sequence of research-oriented tasks.
 
 This modular design allows you to adapt the crew for a wide variety of research and knowledge-generation use cases.
